@@ -1,0 +1,9 @@
+tcp                                                            udp
+connection-oriented                                            connection-less
+
+reliable, ordered, and error-checked delivery of data          no guarantee
+
+the server creates a socket object,                            the server creates a socket object, 
+binds it to a specified host and port,                         binds it to a specified host and port, 
+and listens for incoming connections                           and waits for incoming datagrams
+  

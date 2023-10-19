@@ -1,0 +1,22 @@
+Stop-and-Wait Protocol:
+
+The Stop-and-Wait protocol is a simple flow control protocol for point-to-point communication systems. 
+In this protocol, the sender sends a single packet of data and waits for an acknowledgement from the receiver before sending the next packet.
+
+The implementation of the Stop-and-Wait protocol using Python sockets involves the following steps:
+
+    Create a socket object using the socket module in Python.
+    Define the IP address and the port number that the socket will listen on.
+    Bind the socket to the IP address and the port number.
+    Listen for incoming connections using the listen method.
+    Accept a connection using the accept method. 
+    This returns a new socket object and the address of the client that has connected to the server.
+    Define the data to be sent.
+    Send the data using the send method of the socket object.
+    Receive the acknowledgement from the receiver using the recv method of the socket object.
+    Close the connection using the close method of the socket object.
+
+The program that I provided implements the Stop-and-Wait protocol using Python sockets. 
+It creates a server that listens for incoming connections, accepts a connection from a client, sends a single packet of data, 
+waits for an acknowledgement from the client, and then closes the connection. 
+The program uses the encode and decode methods to convert the data between bytes and string representations.

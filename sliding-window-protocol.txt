@@ -1,0 +1,38 @@
+Sliding Window Protocol:
+
+The Sliding Window protocol is a flow control protocol that allows the sender to transmit multiple packets of data before receiving an acknowledgement from the receiver. 
+In this protocol, the sender maintains a window of packets that have been sent but not yet acknowledged by the receiver.
+
+The implementation of the Sliding Window protocol using Python sockets involves the following steps:
+
+    Create a socket object using the socket module in Python.
+    Define the IP address and the port number that the socket will listen on.
+    Bind the socket to the IP address and the port number.
+    Listen for incoming connections using the listen method.
+    Accept a connection using the accept method. This returns a new socket object and the address of the client that has connected to the server.
+    Define the data to be sent.
+    Define the window size and the base sequence number.
+    Send the packets in the window using the send method of the socket object.
+    Receive the acknowledgement from the receiver using the recv method of the socket object.
+    Update the base sequence number based on the acknowledgement received.
+    Repeat steps 8-10 until all packets have been sent and acknowledged.
+    Close the connection using the close method of the socket object.
+
+In computer networking, a window is a buffer that holds a certain number of packets being transmitted between two devices. 
+The window size is the number of packets that can be transmitted before the sender must wait for an acknowledgment from the receiver.
+In the Sliding Window Protocol, the sender and receiver use a sliding window to control the flow of packets being transmitted. 
+The sender sends a certain number of packets (equal to the window size) without waiting for an acknowledgment. 
+The receiver acknowledges receipt of the packets it receives and sends the acknowledgment back to the sender.
+The base sequence number is the sequence number of the first packet in the window. 
+The sender sends packets starting from the base sequence number, and waits for an acknowledgment from the receiver. 
+When the sender receives an acknowledgment for a packet, it updates the base sequence number to the next packet in the window and sends the next set of packets.
+
+For example, if the window size is 3 and the base sequence number is 0, the sender sends packets with sequence numbers 0, 1, and 2. 
+The receiver acknowledges receipt of these packets and sends back the acknowledgment for the last packet received. 
+The sender updates the base sequence number to 3, and sends packets with sequence numbers 3, 4, and 5. This process continues until all packets have been sent and acknowledged.
+
+By using a sliding window, the Sliding Window Protocol allows for efficient transmission of data over a network while ensuring that data is transmitted reliably and without errors.
+
+The program that I provided implements the Sliding Window protocol using Python sockets. 
+It creates a server that listens for incoming connections, accepts a connection from a client, sends multiple packets of data using a sliding window approach, waits for acknowledgements from the client for each packet in the window, updates the base sequence number based on the acknowledgements received, and then closes the connection. 
+The program uses the encode and decode methods to convert the data between bytes and string representations.
